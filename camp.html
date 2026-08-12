@@ -488,8 +488,8 @@ var pm=document.getElementById('pm'), pi=document.getElementById('pi');
 document.querySelectorAll('.gimg,.ncard').forEach(function(b){
   b.addEventListener('click',function(){ pi.src=b.querySelector('img').src; pm.classList.add('on'); });
 });
-pm.addEventListener('click',function(){ pm.classList.remove('on'); pi.src=''; });
-document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ pm.classList.remove('on'); pi.src=''; } });
+pm.addEventListener('click',function(){ pm.classList.remove('on'); pi.removeAttribute('src'); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ pm.classList.remove('on'); pi.removeAttribute('src'); } });
 </script>
 </body>
 </html>

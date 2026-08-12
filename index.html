@@ -1125,22 +1125,27 @@ var pm=document.getElementById('pm'), pi=document.getElementById('pi');
 document.querySelectorAll('.gimg,.ncard').forEach(function(b){
   b.addEventListener('click',function(){ pi.src=b.querySelector('img').src; pm.classList.add('on'); });
 });
-pm.addEventListener('click',function(){ pm.classList.remove('on'); pi.src=''; });
-document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ pm.classList.remove('on'); pi.src=''; } });
+pm.addEventListener('click',function(){ pm.classList.remove('on'); pi.removeAttribute('src'); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ pm.classList.remove('on'); pi.removeAttribute('src'); } });
 
 var navLinks={};
 document.querySelectorAll('.nav-menu a[href^="#"]').forEach(function(a){
   navLinks[a.getAttribute('href').replace('#','')]=a;
 });
+/* 홈 메뉴는 빈 앵커 #top 을 가리켜 섹션과 이어지지 않는다. 히어로에 연결해 준다 */
+if(navLinks.top && !navLinks.hero) navLinks.hero=navLinks.top;
+
+var secs=document.querySelectorAll('section[id]'), visible={};
 var spy=new IntersectionObserver(function(es){
-  es.forEach(function(e){
-    var a=navLinks[e.target.id];
-    if(!a||!e.isIntersecting) return;
-    for(var k in navLinks) navLinks[k].classList.remove('active');
-    a.classList.add('active');
-  });
+  es.forEach(function(e){ visible[e.target.id]=e.isIntersecting; });
+  /* 화면에 걸친 섹션 중 가장 위의 것 하나만 활성화.
+     하나도 없으면(푸터 등) 전부 해제해 직전 메뉴가 남지 않게 한다 */
+  var cur=null;
+  secs.forEach(function(s){ if(cur===null && visible[s.id] && navLinks[s.id]) cur=s.id; });
+  for(var k in navLinks) navLinks[k].classList.remove('active');
+  if(cur) navLinks[cur].classList.add('active');
 },{rootMargin:'-45% 0px -50% 0px'});
-document.querySelectorAll('section[id]').forEach(function(x){ spy.observe(x); });
+secs.forEach(function(x){ spy.observe(x); });
 </script>
 </body>
 </html>
