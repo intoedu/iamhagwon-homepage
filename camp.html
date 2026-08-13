@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몰입캠프 | 아이엠영어수학학원</title>
+<meta name="description" content="아이엠 몰입캠프 — 한계를 넘어본 아이는 자신을 보는 기준이 달라집니다.">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#fffdf8">
+<meta property="og:title" content="몰입캠프 | 아이엠영어수학학원">
+<meta property="og:description" content="한계를 넘어본 아이는 자신을 보는 기준이 달라집니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="아이엠영어수학학원">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<!-- TODO 도메인 확정 후: og:url · canonical · og:image(절대경로 1200x630) 추가 -->
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#1c252a; --ink2:#4d545d; --ink3:#8b929b;
+  --bg:#fffdf8; --white:#ffffff; --line:#ece9e2;
+  --accent:#db7723; --accent-soft:#fdf1e7; --accent-deep:#b25c11;
+  --brand:#263238; --brand-soft:#eef1f3;
+  --cream:#f7f1e5; --sage:#ecf1ee;
+  --r:20px; --r-lg:28px;
+  --shadow:0 1px 2px rgba(20,22,26,.04), 0 12px 32px rgba(20,22,26,.06);
+  --shadow-lg:0 2px 4px rgba(20,22,26,.04), 0 24px 60px rgba(20,22,26,.10);
+  --max:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;letter-spacing:-.02em;
+  word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}
+.narrow{max-width:820px;margin:0 auto}
+section{padding:clamp(54px,7vw,88px) 0}
+.band-white{background:var(--white)}
+.band-warm{background:linear-gradient(180deg,#faf6ef 0%,#f4eee3 100%)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;
+  color:var(--accent-deep);background:var(--accent-soft);padding:8px 16px;border-radius:100px;margin-bottom:22px}
+.eyebrow.o{color:#37474f;background:var(--brand-soft)}
+h2.sec-title{font-size:clamp(25px,4vw,38px);font-weight:800;line-height:1.36;letter-spacing:-.038em}
+.sec-desc{margin-top:16px;font-size:clamp(15px,2vw,17px);color:var(--ink2);line-height:1.85}
+.sec-head{max-width:680px;margin-bottom:clamp(36px,5.5vw,56px)}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,box-shadow .3s}
+header.scrolled{background:rgba(255,253,248,.9);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.04em;flex-shrink:0}
+.logo .mark{width:auto;height:40px;flex-shrink:0;display:block}
+.nav-menu{display:flex;align-items:center;gap:0}
+.nav-menu a{padding:9px 11px;border-radius:10px;font-size:15px;font-weight:600;color:var(--ink2);transition:.2s;white-space:nowrap}
+.nav-menu a:hover,.nav-menu a.on{color:var(--accent-deep);background:var(--accent-soft)}
+.nav-tel{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;background:var(--brand);color:#fff;
+  padding:11px 18px;border-radius:100px;font-size:15px;font-weight:700;transition:.2s}
+.nav-tel:hover{transform:translateY(-1px)}
+.nav-tel svg{width:15px;height:15px}
+.burger{display:none;width:42px;height:42px;border-radius:12px;background:var(--brand-soft);place-items:center;flex-shrink:0}
+.burger span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:.25s}
+.burger span::before,.burger span::after{content:'';position:absolute;left:0;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
+.burger span::before{top:-6px} .burger span::after{top:6px}
+body.menu-open .burger span{background:transparent}
+body.menu-open .burger span::before{top:0;transform:rotate(45deg)}
+body.menu-open .burger span::after{top:0;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:74px 0 0;z-index:99;background:var(--bg);padding:22px 24px 140px;
+  overflow-y:auto;display:none;flex-direction:column;gap:4px}
+body.menu-open .mobile-menu{display:flex}
+.mobile-menu a{padding:16px 12px;border-radius:14px;font-size:18px;font-weight:700;border-bottom:1px solid var(--line)}
+@media(max-width:1160px){.nav-menu{display:none}.burger{display:grid}}
+@media(min-width:1161px){.mobile-menu{display:none !important}}
+@media(max-width:560px){.nav-tel span.num{display:none}.logo span.nm{display:none}}
+
+.hero{padding:calc(74px + clamp(52px,8vw,88px)) 0 clamp(54px,7vw,84px);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-260px;right:-160px;width:680px;height:680px;border-radius:50%;
+  background:radial-gradient(circle,rgba(219,119,35,.14) 0%,rgba(219,119,35,0) 68%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(27px,5vw,50px);font-weight:800;line-height:1.34;letter-spacing:-.045em}
+.hero p.sub{margin-top:24px;font-size:clamp(15.5px,2.1vw,18px);color:var(--ink2);line-height:1.85;max-width:640px}
+.crumb{font-size:14px;color:var(--ink3);font-weight:600;margin-bottom:18px}
+.crumb a:hover{color:var(--accent-deep)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:17px 26px;border-radius:100px;
+  font-size:16px;font-weight:700;transition:.2s}
+.btn svg{width:17px;height:17px}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 22px rgba(219,119,35,.30)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--accent-deep)}
+.btn-kakao{background:#FEE500;color:#191600;box-shadow:0 8px 22px rgba(254,229,0,.35)}
+.btn-kakao:hover{transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line);box-shadow:var(--shadow)}
+.hero-cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+
+.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:1000px){.cards4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cards4{grid-template-columns:1fr}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px 26px;
+  box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.card .ico{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;font-size:22px;margin-bottom:18px}
+.card h3{font-size:19px;font-weight:800;letter-spacing:-.035em;margin-bottom:10px;line-height:1.4}
+.card p{font-size:15px;color:var(--ink2);line-height:1.8}
+
+.progs{display:grid;gap:18px}
+.prog{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:clamp(30px,4vw,40px);box-shadow:var(--shadow)}
+.prog .lb{display:inline-block;font-size:12.5px;font-weight:800;padding:6px 12px;border-radius:8px;
+  background:var(--accent-soft);color:var(--accent-deep);margin-bottom:14px}
+.prog:nth-child(2) .lb{background:var(--brand-soft);color:#37474f}
+.prog:nth-child(3) .lb{background:var(--cream);color:#7a6134}
+.prog h3{font-size:clamp(20px,2.8vw,25px);font-weight:800;letter-spacing:-.038em;margin-bottom:10px;line-height:1.4}
+.prog .sub{font-size:16px;font-weight:700;color:var(--accent-deep);margin-bottom:14px}
+.prog p{font-size:15.5px;color:var(--ink2);line-height:1.85}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:20px}
+.flow span{background:var(--bg);border:1px solid var(--line);border-radius:100px;padding:9px 16px;
+  font-size:13.5px;font-weight:700}
+.flow i{color:var(--ink3);font-style:normal;font-size:13px}
+
+.gimg{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;aspect-ratio:4/3;background:var(--brand-soft);cursor:zoom-in}
+.gimg img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.gimg:hover img{transform:scale(1.05)}
+.ncard{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:16px;
+  overflow:hidden;background:#fff;box-shadow:var(--shadow);cursor:zoom-in;transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s}
+.ncard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.ncard img{width:100%;height:auto;display:block}
+.ngrid,.gal2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:760px){.ngrid,.gal2{grid-template-columns:1fr}}
+.pmodal{position:fixed;inset:0;z-index:200;background:rgba(15,17,21,.93);display:none;
+  align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.pmodal.on{display:flex}
+.pmodal img{max-width:100%;max-height:88vh;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.pmodal .x{position:absolute;top:18px;right:24px;color:#fff;font-size:34px;font-weight:300;line-height:1}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+@media(max-width:880px){.quotes{grid-template-columns:1fr}}
+.quote{background:var(--accent-soft);border-radius:var(--r-lg);padding:30px 26px;
+  font-size:17px;font-weight:700;letter-spacing:-.03em;line-height:1.6;color:var(--accent-deep)}
+.quote:nth-child(2){background:var(--brand-soft);color:#37474f}
+.quote:nth-child(3){background:var(--cream);color:#7a6134}
+.feedback{margin-top:22px;text-align:center;font-size:15.5px;color:var(--ink2);line-height:1.78}
+.punch{margin-top:12px;text-align:center;font-size:clamp(18px,2.6vw,23px);font-weight:800;letter-spacing:-.035em}
+
+.cta-band{background:var(--ink);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);
+  width:800px;height:500px;background:radial-gradient(ellipse,rgba(219,119,35,.30) 0%,rgba(219,119,35,0) 70%)}
+.cta-band .wrap{position:relative;z-index:1}
+.cta-band h2{font-size:clamp(23px,3.8vw,36px);font-weight:800;letter-spacing:-.04em;line-height:1.4}
+.tel-big{display:inline-flex;align-items:center;gap:13px;margin-top:30px;background:#fff;color:var(--ink);
+  padding:20px 34px;border-radius:100px;font-size:clamp(20px,3.2vw,26px);font-weight:800;
+  transition:.2s;box-shadow:0 14px 40px rgba(0,0,0,.3)}
+.tel-big:hover{transform:translateY(-3px)}
+.tel-big svg{width:22px;height:22px;color:var(--accent)}
+.cta-links{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cta-band .hours{margin-top:24px;font-size:14.5px;color:rgba(255,255,255,.5)}
+
+footer{background:#182126;color:rgba(255,255,255,.5);padding:56px 0 118px;font-size:14px}
+@media(min-width:769px){footer{padding-bottom:56px}}
+.f-top{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:30px}
+.f-logo{color:#fff;font-weight:800;font-size:17px;letter-spacing:-.04em;margin-bottom:12px}
+.f-copy{line-height:1.9}
+.f-links{display:flex;gap:18px;flex-wrap:wrap;max-width:520px}
+.f-links a{color:rgba(255,255,255,.62);font-weight:600}
+.f-links a:hover{color:#fff}
+.f-bot{border-top:1px solid rgba(255,255,255,.09);padding-top:22px;font-size:13px;line-height:1.9;color:rgba(255,255,255,.36)}
+
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:98;display:none;
+  background:rgba(255,253,248,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom));gap:10px}
+.callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px;
+  border-radius:14px;font-size:15.5px;font-weight:800}
+.callbar .c1{background:var(--accent);color:#fff}
+.callbar .c2{background:#FEE500;color:#191600}
+.callbar svg{width:17px;height:17px}
+@media(max-width:768px){.callbar{display:flex}}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ================= v7 · 디테일 정리 ================= */
+:root{ --r:18px; --r-lg:24px }
+html{-webkit-text-size-adjust:100%}
+::selection{background:rgba(219,119,35,.20)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+
+/* --- 헤더: 항상 하단 라인 --- */
+header{
+  background:rgba(255,253,248,.80);
+  -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  box-shadow:none;
+}
+header.scrolled{
+  background:rgba(255,253,248,.95);
+  border-bottom-color:#e0dbd0;
+  box-shadow:0 6px 24px rgba(20,22,26,.055);
+}
+.nav-menu a{position:relative;padding:10px 12px;font-size:15px;letter-spacing:-.025em;transition:color .2s}
+.nav-menu a:hover{background:transparent;color:var(--accent-deep)}
+.nav-menu a::after{content:'';position:absolute;left:12px;right:12px;bottom:1px;height:2px;border-radius:2px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;
+  transition:transform .28s cubic-bezier(.2,.7,.3,1)}
+.nav-menu a:hover::after,.nav-menu a.active::after{transform:scaleX(1)}
+.nav-menu a.active{color:var(--accent-deep)}
+.mobile-menu{border-top:1px solid var(--line)}
+
+/* --- 타이포: 줄 · 크기 · 자간 통일 --- */
+h1,h2,h3,h4{text-wrap:balance}
+.hero h1{line-height:1.3;letter-spacing:-.045em}
+.hero-sub{font-size:clamp(15.5px,2.1vw,17.5px);line-height:1.8}
+h2.sec-title{line-height:1.32;letter-spacing:-.038em}
+.sec-desc{font-size:16px;line-height:1.8;color:var(--ink2)}
+.eyebrow{font-size:12.5px;letter-spacing:.01em;margin-bottom:18px}
+.card h3,.box h4,.level h4,.gitem h4,.prog h3{letter-spacing:-.035em;line-height:1.42}
+.card p,.box p,.level p,.gitem p,.q-body p,.tier .d,.mathflow p{
+  font-size:15.5px;line-height:1.78;letter-spacing:-.015em}
+.news-item h4{font-size:16.5px;line-height:1.55}
+.philo p{font-size:clamp(15.5px,2vw,17px);line-height:1.9}
+.sub-lb,.level .tag,.box .lb,.news-item .cat,.card .num{letter-spacing:.02em}
+.flow span{letter-spacing:-.02em;line-height:1.2}
+.info-row .vl{line-height:1.65}
+
+/* --- 간격 체계 --- */
+.cards3,.levels,.two,.evals,.news,.ngrid{gap:18px}
+.grid8,.gal,.n4{gap:16px}
+.mini{gap:12px}
+.sec-head{margin-bottom:clamp(32px,4.5vw,48px)}
+
+/* --- 카드 높이 · 바닥선 정렬 --- */
+.cards3,.levels,.two,.evals,.news,.grid8{align-items:stretch}
+.card,.box,.level,.news-item,.gitem,.prog{display:flex;flex-direction:column;height:100%}
+.gitem h4{order:1}
+.gitem p{order:2;flex:1 1 auto;margin-bottom:0}
+.gitem .tool{order:3;margin:16px 0 0;align-self:flex-start}
+.card p:last-child,.box p:last-child,.level p:last-child{margin-bottom:0}
+.level ul{margin-top:auto}
+.level .tag,.box .lb,.news-item .cat,.card .num,.prog .lb,.card .ico,.slot .ico{align-self:flex-start}
+.level .skills{align-self:stretch}
+
+/* --- 표 · 숫자 정렬 --- */
+table.price{font-variant-numeric:tabular-nums}
+table.price td{line-height:1.5}
+.hero-meta,.tel-big,.nav-tel{font-variant-numeric:tabular-nums}
+
+/* --- 버튼 --- */
+.btn{padding:16px 26px;font-size:16px;line-height:1.2;letter-spacing:-.025em}
+.nav-tel,.tel-big{line-height:1.2}
+
+/* --- 이미지 --- */
+.gimg,.ncard{border-radius:var(--r)}
+.mini .gimg{border-radius:14px}
+
+
+/* --- 모바일 헤더 정렬 --- */
+@media(max-width:1160px){
+  .nav{gap:12px}
+  .nav-tel{margin-left:auto}
+}
+@media(max-width:560px){
+  .logo span.nm{display:block;font-size:14.5px;letter-spacing:-.05em}
+  .logo{gap:8px}
+  .logo .mark{height:34px}
+  .nav-tel{padding:10px 15px;font-size:14.5px}
+  .burger{width:40px;height:40px}
+}
+@media(max-width:360px){ .logo span.nm{display:none} }
+
+/* --- 손글씨 카드 높이 통일 --- */
+.ngrid .ncard{padding:10px;background:#fffefb}
+.ngrid .ncard img{aspect-ratio:3/2;object-fit:contain;border-radius:10px}
+
+/* --- FAQ --- */
+.q-btn{padding:22px 4px;line-height:1.55}
+.q-body p{padding-bottom:22px}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><img class="mark" src="images/logo.png" alt="아이엠영어수학학원 로고" width="208" height="240" decoding="async"><span class="nm">아이엠영어수학학원</span></a>
+    <nav class="nav-menu">
+      <a href="index.html">홈</a>
+      <a href="index.html#philosophy">교육철학</a>
+      <a href="index.html#system">성장시스템</a>
+      <a href="index.html#curriculum">영어·수학</a>
+      <a href="index.html#allcare">올케어</a>
+      <a href="index.html#evaluation">평가</a>
+      <a href="index.html#tuition">교습비</a>
+      <a href="index.html#visit">오시는 길</a>
+      <a href="camp.html" class="on">몰입캠프</a>
+    </nav>
+    <a href="tel:01055475380" class="nav-tel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      전화 상담<span class="num"> 010-5547-5380</span>
+    </a>
+    <button class="burger" id="bg" aria-label="메뉴"><span></span></button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mm">
+  <a href="index.html">홈</a>
+  <a href="index.html#philosophy">교육철학</a>
+  <a href="index.html#why">왜 아이엠인가</a>
+  <a href="index.html#system">아이엠 성장시스템</a>
+  <a href="index.html#curriculum">영어 · 수학</a>
+  <a href="index.html#allcare">초·중등 올케어</a>
+  <a href="index.html#evaluation">평가와 성장</a>
+  <a href="index.html#tuition">교습비 안내</a>
+  <a href="index.html#faq">자주 묻는 질문</a>
+  <a href="index.html#visit">오시는 길</a>
+  <a href="camp.html">몰입캠프</a>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> &nbsp;›&nbsp; 몰입캠프</div>
+    <span class="eyebrow">몰입캠프</span>
+    <h1>한계를 넘어본 아이는<br>자신을 보는 기준이 달라집니다.</h1>
+    <p class="sub">
+      아이엠 몰입캠프는 단순히 오랜 시간 공부하는 캠프가 아닙니다.<br>
+      평소 자신이 할 수 있다고 생각했던 임계량을 넘어서는 활동에 도전하고,
+      제대로 공부하는 방법을 배우며 끝까지 해내는 경험을 합니다.<br>
+      그리고 그 과정을 혼자가 아니라 함께 해냅니다.
+    </p>
+    <div class="hero-cta">
+      <a href="tel:01055475380" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        캠프 문의
+      </a>
+      <a href="http://pf.kakao.com/_xlsqPb/chat" target="_blank" rel="noopener" class="btn btn-kakao">카카오톡 상담</a>
+    </div>
+  </div>
+</section>
+
+<section class="band-white">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow o">몰입캠프에서 얻는 것</span>
+      <h2 class="sec-title">몰입캠프가 남기는<br>네 가지</h2>
+    </div>
+    <div class="cards4">
+      <div class="card rv">
+        <div class="ico" style="background:var(--accent-soft)">🚀</div>
+        <h3>한계를 넘어서는 힘</h3>
+        <p>자신이 정해놓았던 한계를 넘어보는 경험을 합니다.</p>
+      </div>
+      <div class="card rv">
+        <div class="ico" style="background:var(--brand-soft)">🎯</div>
+        <h3>몰입하는 힘</h3>
+        <p>몰입 경험을 반복하며 집중하고 끝까지 해내는 힘을 체화합니다.</p>
+      </div>
+      <div class="card rv">
+        <div class="ico" style="background:var(--cream)">🤝</div>
+        <h3>함께하는 힘</h3>
+        <p>서로 질문하고 설명하고 응원하면서 연대의 힘을 배웁니다.</p>
+      </div>
+      <div class="card rv">
+        <div class="ico" style="background:var(--sage)">⭐</div>
+        <h3>모두가 리더가 되는 경험</h3>
+        <p>잘하는 학생만 리더가 아닙니다. 설명하는 사람, 질문하는 사람, 친구를 돕고 격려하는 사람 모두가 리더입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-warm">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">몰입캠프 프로그램</span>
+      <h2 class="sec-title">세 가지 캠프</h2>
+    </div>
+    <div class="progs">
+      <div class="prog rv">
+        <span class="lb">시험대비</span>
+        <h3>시험대비 주말 몰입캠프</h3>
+        <div class="sub">시험 전 4주, 평일의 공부를 완성합니다.</div>
+        <p>평일에 공부한 내용을 주말에 백지에 꺼내어 정리하고 친구들에게 설명하는 하브루타를 진행합니다.</p>
+        <div class="flow">
+          <span>평일학습</span><i>›</i><span>백지정리</span><i>›</i><span>하브루타</span><i>›</i><span>질문</span><i>›</i><span>설명</span><i>›</i><span>부족함 발견</span><i>›</i><span>보완</span><i>›</i><span>다시 도전</span>
+        </div>
+      </div>
+      <div class="prog rv">
+        <span class="lb">과목별</span>
+        <h3>과목별 몰입캠프</h3>
+        <div class="sub">한 과목을 제대로 공부하는 방법을 경험합니다.</div>
+        <p>과목별 공부법을 배우고 일정 시간 깊이 몰입하여 직접 적용합니다.</p>
+      </div>
+      <div class="prog rv">
+        <span class="lb">진로·동기</span>
+        <h3>진로 · 동기부여 캠프</h3>
+        <div class="sub">공부해야 하는 이유를 찾습니다.</div>
+        <p>자신의 강점과 미래, 꿈과 목표를 탐색하며 공부의 이유를 발견합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">캠프 현장</span>
+      <h2 class="sec-title">캠프의 순간들</h2>
+    </div>
+    <div class="gal2 rv">
+      <button class="gimg" aria-label="몰입 학습"><img src="images/camp-scene-1.jpg" alt="몰입 학습" loading="lazy" width="680" height="510" decoding="async"></button>
+      <button class="gimg" aria-label="백지정리 결과물"><img src="images/camp-scene-2.jpg" alt="백지정리 결과물" loading="lazy" width="680" height="1006" decoding="async"></button>
+    </div>
+  </div>
+</section>
+
+<section class="band-white">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow o">학생들의 이야기</span>
+      <h2 class="sec-title">캠프를 마친 아이들은<br>이렇게 말합니다</h2>
+    </div>
+    <div class="ngrid rv">
+      <button class="ncard" aria-label="캠프 후기"><img src="images/camp-review-1.jpg" alt="학생이 직접 쓴 캠프 후기" loading="lazy" width="680" height="192" decoding="async"></button>
+      <button class="ncard" aria-label="캠프 후기"><img src="images/camp-review-2.jpg" alt="학생이 직접 쓴 캠프 후기" loading="lazy" width="680" height="340" decoding="async"></button>
+      <button class="ncard" aria-label="캠프 후기"><img src="images/camp-review-3.jpg" alt="학생이 직접 쓴 캠프 후기" loading="lazy" width="680" height="312" decoding="async"></button>
+      <button class="ncard" aria-label="캠프 후기"><img src="images/camp-review-4.jpg" alt="학생이 직접 쓴 캠프 후기" loading="lazy" width="680" height="111" decoding="async"></button>
+    </div>
+    <div class="quotes rv">
+      <div class="quote">“힘들었지만 뿌듯했어요.”</div>
+      <div class="quote">“제대로 공부하는 방법을 배웠어요.”</div>
+      <div class="quote">“내가 이렇게까지 할 수 있는지 몰랐어요.”</div>
+    </div>
+    <p class="feedback rv">이런 피드백을 받습니다.</p>
+    <div class="punch rv">그래서 우리는 또, 몰입합니다.</div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>몰입캠프 문의는<br>전화 또는 카카오톡으로 받고 있습니다</h2>
+    <a href="tel:01055475380" class="tel-big">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      010-5547-5380
+    </a>
+    <div class="cta-links">
+      <a href="http://pf.kakao.com/_xlsqPb/chat" target="_blank" rel="noopener" class="btn btn-kakao">카카오톡 상담</a>
+      <a href="index.html" class="btn btn-ghost">← 홈으로</a>
+    </div>
+    <div class="hours">상담 가능 시간 · 오후 1:00 ~ 오후 10:30</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <div class="f-logo">아이엠영어수학학원</div>
+        <div class="f-copy">
+          경북 구미시 산호대로23길 36 옥계 다운타운 4층<br>
+          대표 김미경 · 010-5547-5380 · 오후 1:00 ~ 오후 10:30
+        </div>
+      </div>
+      <div class="f-links">
+        <a href="index.html">홈</a>
+        <a href="index.html#philosophy">교육철학</a>
+        <a href="index.html#system">성장시스템</a>
+        <a href="index.html#curriculum">영어·수학</a>
+        <a href="index.html#allcare">올케어</a>
+        <a href="index.html#tuition">교습비</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#visit">오시는 길</a>
+        <a href="camp.html">몰입캠프</a>
+      </div>
+    </div>
+    <div class="f-bot">
+      구미교육지원청 등록번호 제842호<br>
+      © 2026 아이엠영어수학학원. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<div class="pmodal" id="pm"><span class="x">&times;</span><img id="pi" alt=""></div>
+
+<div class="callbar">
+  <a href="tel:01055475380" class="c1">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    전화 문의
+  </a>
+  <a href="http://pf.kakao.com/_xlsqPb/chat" target="_blank" rel="noopener" class="c2">카카오톡 상담</a>
+</div>
+
+<script>
+var hd=document.getElementById('hd');
+function onScroll(){hd.classList.toggle('scrolled',window.scrollY>10)}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(Math.min(i%4,3)*60)+'ms';io.observe(el)});
+var bg=document.getElementById('bg');
+bg.addEventListener('click',function(){document.body.classList.toggle('menu-open')});
+document.querySelectorAll('#mm a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open')})});
+
+var pm=document.getElementById('pm'), pi=document.getElementById('pi');
+document.querySelectorAll('.gimg,.ncard').forEach(function(b){
+  b.addEventListener('click',function(){ pi.src=b.querySelector('img').src; pm.classList.add('on'); });
+});
+pm.addEventListener('click',function(){ pm.classList.remove('on'); pi.removeAttribute('src'); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ pm.classList.remove('on'); pi.removeAttribute('src'); } });
+</script>
+</body>
+</html>
